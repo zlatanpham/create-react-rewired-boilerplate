@@ -5,7 +5,8 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "^2.1.8"
+    "react-scripts": "^2.1.8",
+    "styled-components": "^4.2.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -23,6 +24,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.0",
+    "customize-cra": "^0.2.12",
     "react-app-rewire-hot-loader": "^2.0.1",
     "react-app-rewired": "^2.1.0",
     "react-hot-loader": "^4.8.0"
