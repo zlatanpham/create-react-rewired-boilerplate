@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-plugin-tailwind-components": "^0.5.10",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^2.1.8",
@@ -24,10 +25,15 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "babel-plugin-macros": "^2.5.0",
     "babel-plugin-styled-components": "^1.10.0",
     "customize-cra": "^0.2.12",
+    "glob-all": "^3.1.0",
+    "purgecss-webpack-plugin": "^1.4.0",
     "react-app-rewire-hot-loader": "^2.0.1",
     "react-app-rewired": "^2.1.0",
-    "react-hot-loader": "^4.8.0"
+    "react-hot-loader": "^4.8.0",
+    "tailwind.macro": "^0.5.10",
+    "tailwindcss": "^0.7.4"
   }
 }
