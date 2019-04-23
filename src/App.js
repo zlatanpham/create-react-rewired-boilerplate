@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import { hot } from 'react-hot-loader';
+import React from 'react';
 import Button from '@/components/Button';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Button>My very first button</Button>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div
+      css={`
+        padding-bottom: 50px;
+      `}
+      className="bg-grey flex items-center justify-center h-screen"
+    >
+      <Button>Click me please</Button>
+    </div>
+  );
 }
 
-export default (process.env.NODE_ENV === 'development'
-  ? hot(module)(App)
-  : App);
+export default App;

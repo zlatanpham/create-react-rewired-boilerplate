@@ -5,9 +5,9 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const glob = require('glob-all');
 const {
   addWebpackResolve,
-  addBabelPlugin,
+  addBabelPlugins,
   override,
-  addPostcssPlugins,
+  addPostcssPlugins
 } = require('customize-cra');
 
 class TailwindExtractor {
@@ -18,7 +18,7 @@ class TailwindExtractor {
 
 module.exports = override(
   addWebpackResolve({ alias: { '@': path.resolve(__dirname, 'src') } }),
-  addBabelPlugin('babel-plugin-styled-components'),
+  addBabelPlugins('styled-components'),
   addPostcssPlugins([require('tailwindcss')('./src/tailwind.js')]),
   config => {
     if (process.env.NODE_ENV === 'production') {
@@ -27,20 +27,22 @@ module.exports = override(
           analyzerMode: 'static',
           openAnalyzer: false,
           generateStatsFile: true,
-          statsFilename: 'stats.json',
+          statsFilename: 'stats.json'
         }),
         new PurgecssPlugin({
           paths: glob.sync([path.join(__dirname, 'src/**/*.js')]),
+          // Avoid unapply normalize.css rule for <body>
+          whitelist: ['body'],
           extractors: [
             {
               extractor: TailwindExtractor,
-              extensions: ['jsx', 'js'],
-            },
-          ],
-        }),
+              extensions: ['jsx', 'js']
+            }
+          ]
+        })
       ]);
     }
     return config;
   },
-  config => rewireReactHotLoader(config),
+  config => rewireReactHotLoader(config)
 );
