@@ -4,3 +4,4 @@ This boilerplate using `react-app-rewired` helps to override `create-react-app` 
 - bind `react-hot-loader`.
 - `styled-component` & its babel plugin
 - support tailwindcss & its macros for styled-components
+- add `bundle-analyzer`

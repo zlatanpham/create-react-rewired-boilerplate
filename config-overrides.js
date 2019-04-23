@@ -1,6 +1,7 @@
 const rewireReactHotLoader = require('react-app-rewire-hot-loader');
 const path = require('path');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const glob = require('glob-all');
 const {
   addWebpackResolve,
@@ -22,6 +23,12 @@ module.exports = override(
   config => {
     if (process.env.NODE_ENV === 'production') {
       config.plugins = (config.plugins || []).concat([
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'static',
+          openAnalyzer: false,
+          generateStatsFile: true,
+          statsFilename: 'stats.json',
+        }),
         new PurgecssPlugin({
           paths: glob.sync([path.join(__dirname, 'src/**/*.js')]),
           extractors: [
