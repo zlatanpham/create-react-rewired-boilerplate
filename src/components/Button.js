@@ -10,7 +10,14 @@ const StyledButton = styled.button`
 `;
 
 const Button = ({ children, ...rest }) => (
-  <StyledButton {...rest}>{children}</StyledButton>
+  <StyledButton
+    css={`
+      ${tw`rounded-full hover:bg-red hover:text-white`}
+    `}
+    {...rest}
+  >
+    {children}
+  </StyledButton>
 );
 
 export default Button;
