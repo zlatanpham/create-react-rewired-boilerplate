@@ -7,7 +7,7 @@ const {
   addWebpackResolve,
   addBabelPlugins,
   override,
-  addPostcssPlugins
+  addPostcssPlugins,
 } = require('customize-cra');
 
 class TailwindExtractor {
@@ -27,7 +27,7 @@ module.exports = override(
           analyzerMode: 'static',
           openAnalyzer: false,
           generateStatsFile: true,
-          statsFilename: 'stats.json'
+          statsFilename: 'stats.json',
         }),
         new PurgecssPlugin({
           paths: glob.sync([path.join(__dirname, 'src/**/*.js')]),
@@ -36,10 +36,10 @@ module.exports = override(
           extractors: [
             {
               extractor: TailwindExtractor,
-              extensions: ['jsx', 'js']
-            }
-          ]
-        })
+              extensions: ['jsx', 'js'],
+            },
+          ],
+        }),
       ]);
     }
     return config;
