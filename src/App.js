@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import Button from '@/components/Button';
 
@@ -14,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default hot(App);
