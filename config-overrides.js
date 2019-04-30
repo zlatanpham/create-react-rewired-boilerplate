@@ -8,6 +8,7 @@ const {
   addBabelPlugins,
   override,
   addPostcssPlugins,
+  useEslintRc,
 } = require('customize-cra');
 
 class TailwindExtractor {
@@ -18,7 +19,14 @@ class TailwindExtractor {
 
 module.exports = override(
   addWebpackResolve({ alias: { '@': path.resolve(__dirname, 'src') } }),
-  addBabelPlugins('styled-components'),
+  addBabelPlugins('styled-components', [
+    'tailwind-components',
+    {
+      config: './src/tailwind.js',
+      format: 'auto',
+    },
+  ]),
+  useEslintRc(),
   addPostcssPlugins([require('tailwindcss')('./src/tailwind.js')]),
   config => {
     if (process.env.NODE_ENV === 'production') {
@@ -44,5 +52,5 @@ module.exports = override(
     }
     return config;
   },
-  config => rewireReactHotLoader(config)
+  config => rewireReactHotLoader(config),
 );
