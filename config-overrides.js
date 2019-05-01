@@ -40,7 +40,7 @@ module.exports = override(
         new PurgecssPlugin({
           paths: glob.sync([path.join(__dirname, 'src/**/*.js')]),
           // Avoid unapply normalize.css rule for <body>
-          whitelist: ['body'],
+          whitelist: ['html', 'body'],
           extractors: [
             {
               extractor: TailwindExtractor,
