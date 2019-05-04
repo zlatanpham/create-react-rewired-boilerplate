@@ -29,6 +29,7 @@
     ]
   },
   "devDependencies": {
+    "@hot-loader/react-dom": "^16.8.6",
     "babel-plugin-macros": "^2.5.1",
     "babel-plugin-styled-components": "^1.10.0",
     "babel-plugin-tailwind-components": "^0.5.10",
