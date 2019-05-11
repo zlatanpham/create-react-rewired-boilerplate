@@ -11,10 +11,10 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "build:analyze": "webpack-bundle-analyzer --port 4200 build/stats.json",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "serve": "serve -s build",
-    "bundle-report": "webpack-bundle-analyzer --port 4200 build/stats.json"
+    "serve": "serve -s build"
   },
   "browserslist": {
     "production": [

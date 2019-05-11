@@ -30,6 +30,7 @@ module.exports = override(
       config: './src/tailwind.js',
       format: 'auto',
     },
+    'react-hot-loader/babel',
   ]),
   useEslintRc(),
   addPostcssPlugins([require('tailwindcss')('./src/tailwind.js')]),
