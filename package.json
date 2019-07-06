@@ -14,6 +14,8 @@
     "build": "react-app-rewired build",
     "build:analyze": "react-app-rewired build && webpack-bundle-analyzer --port 4200 build/stats.json",
     "test": "react-app-rewired test",
+    "test:ci": "react-app-rewired test test --env=jsdom --maxWorkers=2",
+    "test:coverage": "react-app-rewired test --coverage --watchAll=false",
     "serve": "serve -s build",
     "prettify": "prettier -c --write \"*/**\""
   },
@@ -31,12 +33,15 @@
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.8.6",
+    "@testing-library/react": "^8.0.4",
+    "@types/jest": "^24.0.15",
     "babel-plugin-macros": "^2.6.1",
     "babel-plugin-styled-components": "^1.10.6",
     "babel-plugin-tailwind-components": "^0.5.10",
     "customize-cra": "^0.2.14",
     "glob-all": "^3.1.0",
     "husky": "^3.0.0",
+    "jest-styled-components": "^6.3.3",
     "lint-staged": "^9.0.2",
     "prettier": "^1.18.2",
     "purgecss-webpack-plugin": "^1.5.0",
@@ -57,5 +62,8 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }
