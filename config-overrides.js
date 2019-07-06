@@ -20,7 +20,6 @@ class TailwindExtractor {
 module.exports = override(
   addWebpackResolve({
     alias: {
-      '@': path.resolve(__dirname, 'src'),
       'react-dom': '@hot-loader/react-dom',
     },
   }),
