@@ -1,4 +1,4 @@
-# Create React App boilerplay
+# Create React App boilerplate
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/edb328da-b301-4be4-ba1a-2fac668d034e/deploy-status)](https://app.netlify.com/sites/cra-rewired-boilerplate/deploys)
 
