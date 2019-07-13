@@ -7,8 +7,9 @@ function App() {
     <div
       css={`
         padding-bottom: 50px;
+        background-color: #ededed;
       `}
-      className="bg-grey flex items-center justify-center h-screen"
+      className="flex items-center justify-center h-screen"
     >
       <Button>Click me please</Button>
     </div>

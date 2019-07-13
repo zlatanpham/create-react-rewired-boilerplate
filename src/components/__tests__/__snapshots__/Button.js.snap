@@ -2,22 +2,16 @@
 
 exports[`<Button/> Should match snapshot 1`] = `
 .c0 {
-  font-family: "Menlo","Monaco","Consolas","Liberation Mono","Courier New","monospace";
-  color: #22292f;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  background-color: #000;
+  color: #fff;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #ffed4a;
+  border-radius: 9999px;
   font-size: 20px;
   font-weight: bold;
   border: none;
-  border-radius: 9999px;
-}
-
-.c0:hover {
-  background-color: #e3342f;
-  color: #ffffff;
 }
 
 <button
