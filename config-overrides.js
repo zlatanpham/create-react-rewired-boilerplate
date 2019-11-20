@@ -1,11 +1,11 @@
 const rewireReactHotLoader = require('react-app-rewire-hot-loader');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const {
   addWebpackResolve,
   addBabelPlugins,
   override,
   addPostcssPlugins,
   useEslintRc,
+  addBundleVisualizer,
 } = require('customize-cra');
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
@@ -35,18 +35,6 @@ module.exports = override(
     require('tailwindcss')('./src/tailwind.config.js'),
     ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),
   ]),
-  config => {
-    if (process.env.NODE_ENV === 'production') {
-      config.plugins = (config.plugins || []).concat([
-        new BundleAnalyzerPlugin({
-          analyzerMode: 'static',
-          openAnalyzer: false,
-          generateStatsFile: true,
-          statsFilename: 'stats.json',
-        }),
-      ]);
-    }
-    return config;
-  },
-  config => rewireReactHotLoader(config),
+  process.env.REACT_APP_BUNDLE_VISUALIZER == 1 && addBundleVisualizer(),
+  rewireReactHotLoader,
 );
