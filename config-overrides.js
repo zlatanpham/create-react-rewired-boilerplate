@@ -10,10 +10,16 @@ const {
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
   // Specify the paths to all of the template files in your project
-  content: ['./src/**/*.html', './src/**/*.js'],
+  content: [
+    {
+      raw: '<html><body><div id="root"></div></body></html>',
+      extension: 'html',
+    },
+    './src/**/*.html',
+    './src/**/*.js',
+  ],
   // Include any special characters you're using in this regular expression
   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-  whitelist: ['html', 'body'],
 });
 
 module.exports = override(
