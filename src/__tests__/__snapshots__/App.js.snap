@@ -20,7 +20,7 @@ exports[`Should match snapshot 1`] = `
 }
 
 <div
-  class="flex items-center justify-center h-screen c0"
+  class="c0 flex items-center justify-center h-screen"
 >
   <button
     class="c1"
