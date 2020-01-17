@@ -41,7 +41,7 @@
     "babel-plugin-styled-components": "^1.10.6",
     "babel-plugin-tailwind-components": "^0.5.10",
     "customize-cra": "^0.9.1",
-    "husky": "^3.1.0",
+    "husky": "^4.0.10",
     "jest-styled-components": "^6.3.4",
     "lint-staged": "^9.4.3",
     "prettier": "^1.19.1",
