@@ -28,14 +28,7 @@ module.exports = override(
       'react-dom': '@hot-loader/react-dom',
     },
   }),
-  addBabelPlugins('styled-components', [
-    'tailwind-components',
-    {
-      config: './src/tailwind.config.js',
-      format: 'auto',
-    },
-    'react-hot-loader/babel',
-  ]),
+  addBabelPlugins('styled-components'),
   useEslintRc(),
   addPostcssPlugins([
     require('tailwindcss')('./src/tailwind.config.js'),
