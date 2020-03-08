@@ -1,20 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Button/> Should match snapshot 1`] = `
-.c0 {
-  background-color: #000;
-  color: #fff;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-radius: 9999px;
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-}
-
 <button
-  class="c0"
+  class="Button__StyledButton-sc-9ohxp-0 egjzQM"
 />
 `;

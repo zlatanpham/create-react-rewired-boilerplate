@@ -1,13 +1,3 @@
 {
-  "plugins": [
-    "styled-components",
-    [
-      "tailwind-components",
-      {
-        "config": "./src/tailwind.config.js",
-        "format": "auto"
-      },
-      "react-hot-loader/babel"
-    ]
-  ]
+  "plugins": ["styled-components"]
 }
